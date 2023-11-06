@@ -1,0 +1,137 @@
+<!-- 작성자 : 차소영 -->
+<!-- 작성 날짜 : 2023.11.03. -->
+<!-- 컴포넌트 폼 7가지 이상을 이용하여 폼 화면 만들기 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴포넌트 7가지 이상을 이용한 폼</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #794113; /* 웹 페이지 배경색 설정 */
+            display: flex;
+            justify-content: center; /* 요소를 수평 중앙 정렬 */
+            align-items: center; /* 요소를 수직 중앙 정렬 */
+            height: 100vh; /* 뷰포트 높이 100%로 설정 */
+            margin: 0; /* 외부 여백 제거 */
+        }
+
+        .form-container {
+            background-color: white; /* 폼 컨테이너 배경색을 흰색으로 설정 */
+            border-radius: 20px; /* 폼 컨테이너에 라운드된 모서리 생성 */
+            padding: 20px; /* 내부 여백 추가 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+            position: relative; /* 포지션을 상대 위치로 설정 */
+        }
+
+        label {
+            font-weight: bold; /* 레이블 텍스트를 굵게 표시 */
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%; /* 텍스트 입력 필드 및 텍스트 영역을 100% 너비로 확장 */
+            padding: 10px; /* 내부 여백 추가 */
+            margin-bottom: 10px; /* 하단 여백 추가 */
+            border: 1px solid #ccc; /* 테두리 스타일 설정 */
+            border-radius: 5px; /* 입력 필드에 라운드된 모서리 생성 */
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px; /* 라디오 버튼 및 체크 박스 간격 설정 */
+        }
+
+        select {
+            width: 100%; /* 선택 목록을 100% 너비로 확장 */
+            padding: 10px; /* 내부 여백 추가 */
+            margin-bottom: 10px; /* 하단 여백 추가 */
+            border: 1px solid #ccc; /* 테두리 스타일 설정 */
+            border-radius: 5px; /* 선택 목록에 라운드된 모서리 생성 */
+        }
+
+        button {
+            background-color: #4CAF50; /* 버튼 배경색 설정 */
+            color: white; /* 버튼 텍스트 색상 설정 */
+            padding: 10px 20px; /* 내부 여백 추가 */
+            border: none; /* 테두리 제거 */
+            border-radius: 5px; /* 버튼에 라운드된 모서리 생성 */
+            cursor: pointer; /* 커서 스타일을 포인터로 변경하여 버튼을 클릭할 수 있음을 나타냄 */
+        }
+
+        footer {
+            background-color: #333; /* 푸터 배경색을 어두운 회색(#333)으로 설정 */
+            color: #fff; /* 푸터 텍스트 색상을 흰색(#fff)으로 설정 */
+            padding: 10px; /* 내부 여백 추가 */
+            text-align: center; /* 푸터 텍스트 가운데 정렬 */
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>SO-YOUNG COFFEE ORDER PAGE</h1> <!-- 웹 페이지 제목 -->
+        <form id="coffeeRequestForm"> <!-- 커피 원두 주문 양식 시작 -->
+            <label for="name">이름:</label> <!-- 이름 입력 필드 레이블 -->
+            <input type="text" id="name" name="name" required> <!-- 이름 입력 필드 -->
+            <br><br>
+
+            <label for="email">이메일 주소:</label> <!-- 이메일 입력 필드 레이블 -->
+            <input type="text" id="email" name="email" required> <!-- 이메일 입력 필드 -->
+            <br><br>
+
+            <label>선호하는 커피 종류:</label> <!-- 커피 종류 라디오 버튼 그룹 레이블 -->
+            <br>
+            <input type="radio" id="lightRoast" name="coffeeType" value="라이트 로스트"> <!-- 라이트 로스트 라디오 버튼 -->
+            <label for="lightRoast">라이트 로스트</label> <!-- 라이트 로스트 라벨 -->
+            <input type="radio" id="mediumRoast" name="coffeeType" value="미디엄 로스트"> <!-- 미디엄 로스트 라디오 버튼 -->
+            <label for="mediumRoast">미디엄 로스트</label> <!-- 미디엄 로스트 라벨 -->
+            <input type="radio" id="darkRoast" name="coffeeType" value="다크 로스트"> <!-- 다크 로스트 라디오 버튼 -->
+            <label for="darkRoast">다크 로스트</label> <!-- 다크 로스트 라벨 -->
+            <br><br>
+
+            <label for="quantity">수량 (파운드):</label> <!-- 수량 입력 필드 레이블 -->
+            <input type="text" id="quantity" name="quantity" required> <!-- 수량 입력 필드 -->
+            <br><br>
+
+            <label>추가 선호 사항:</label> <!-- 추가 선호 사항 체크 박스 그룹 레이블 -->
+            <br>
+            <input type="checkbox" id="ground" name="preferences" value="분쇄 원두"> <!-- 분쇄 원두 체크 박스 -->
+            <label for="ground">분쇄 원두</label> <!-- 분쇄 원두 라벨 -->
+            <input type="checkbox" id="wholeBean" name="preferences" value="전체 원두"> <!-- 전체 원두 체크 박스 -->
+            <label for="wholeBean">전체 원두</label> <!-- 전체 원두 라벨 -->
+            <br><br><br>
+
+            <label for="deliveryMethod">배송 방법:</label> <!-- 배송 방법 선택 목록 레이블 -->
+            <select id="deliveryMethod" name="deliveryMethod"> <!-- 배송 방법 선택 목록 -->
+                <option value="일반 배송">일반 배송</option> <!-- 일반 배송 옵션 -->
+                <option value="빠른 배송">빠른 배송</option> <!-- 빠른 배송 옵션 -->
+                <option value="직접 수령">직접 수령</option> <!-- 직접 수령 옵션 -->
+            </select><br><br>
+
+            <label for="additionalComments">추가 사항:</label> <!-- 추가 사항 텍스트 영역 레이블 -->
+            <textarea id="additionalComments" name="additionalComments" rows="4"></textarea> <!-- 추가 사항 텍스트 영역 -->
+
+            <center><button type="submit">제출하기</button></center> <!-- 양식 제출 버튼 -->
+            <br>
+        </form> <!-- 커피 원두 주문 양식 종료 -->
+    </div>
+
+    <footer>
+        &copy; 2023 SO-YOUNG CAFE <!-- 푸터에 상호명 추가 -->
+    </footer>
+    
+    <script>
+        const coffeeRequestForm = document.getElementById('coffeeRequestForm');
+
+        coffeeRequestForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            console.log('양식이 제출되었습니다!');
+        });
+    </script>
+</body>
+</html>
