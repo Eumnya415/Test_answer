@@ -1,0 +1,122 @@
+<!-- 작성자 : 차소영 -->
+<!-- 작성 날짜 : 2023.11.03. -->
+<!-- 풀 다운 메뉴 웹 페이지 만들기 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>커피 원두 판매</title>
+    <style>
+        body {
+            background-color: #8B4513;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #FFF;
+        }
+        #menu-container {
+            background-color: #D2691E;
+            padding: 10px;
+            display: flex;
+            justify-content: center; /* Center the main menu */
+        }
+        #menu {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+        #menu li {
+            margin-right: 80px; /* Increase the margin between main menus to 80px */
+            position: relative;
+        }
+        #menu li:hover ul {
+            display: block;
+        }
+        #menu ul {
+            display: none;
+            background-color: #D2691E;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            min-width: 150px; /* Make the submenus wider */
+        }
+        #menu ul li {
+            display: block;
+            padding: 10px;
+            color: #FFF;
+        }
+        #content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome SO-YOUNG CAFE!</h1>
+
+    <div id="menu-container">
+        <ul id="menu">
+            <li>주문배송
+                <ul>
+                    <li><a href="#">주문배송 조회</a></li>
+                    <li><a href="#">배송 문의</a></li>
+                </ul>
+            </li>
+            <li>커피 종류 선택
+                <ul>
+                    <li><a href="#">아라비카</a></li>
+                    <li><a href="#">로부스타</a></li>
+                    <li><a href="#">에스프레소</a></li>
+                    <li><a href="#">디카페인</a></li>
+                    <li><a href="#">유기농</a></li>
+                </ul>
+            </li>
+            <li>Q&A
+                <ul>
+                    <li><a href="#">자주 묻는 질문</a></li>
+                    <li><a href="#">고객 센터</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="content"> <!-- 콘텐츠 박스를 생성 -->
+        <h2>커피 원두 배송 과정</h2> <!-- 콘텐츠 제목 -->
+        <p>
+            SO-YOUNG CAFE가 고객에게 커피를 제공하는 핵심 프로세스 중 하나입니다. 아래 SO-YOUNG 커피의 원두 배송 과정을 자세히 읽어보세요. <br>
+
+            <h3>주문 수령 및 처리</h3>
+            
+            고객이 커피 판매 사이트를 방문하고 원하는 커피 원두를 선택한 후 주문을 생성합니다. 주문 정보에는 고객의 주소, 결제 정보, 주문 수량 및 선호 배송 날짜와 시간 등이 포함됩니다.<br>
+            <h3>주문 확인 및 결제</h3>
+            
+            커피 판매 사이트는 주문을 확인하고 고객의 결제를 처리합니다. 주문 정보와 결제 정보를 일치시키고 결제가 완료되면 주문은 처리 단계로 이동합니다.<br>
+            <h3>원두 포장 및 라벨링</h3>
+            
+            주문이 처리되면 커피 원두를 상자나 패키지에 신선하게 포장하고 라벨링합니다. 라벨에는 주문 정보, 제품 정보, 유통 기한 등이 포함됩니다.<br>
+            <h3>배송 준비</h3>
+            
+            준비된 주문은 배송을 위해 기다립니다. 고객이 선택한 배송 옵션 및 배송 날짜에 따라 주문은 특정 날짜 또는 시간에 배송되기 위해 대기합니다.<br>
+            <h3>배송 스케줄링 및 라우팅:</h3>
+            
+            커피 판매 사이트는 주문 배송을 위한 라우팅 및 스케줄링을 수행합니다. 이는 주문 수량, 고객 주소, 배송 지역, 배송 트럭 및 배송 스케줄을 고려하여 이루어집니다.<br>
+            <h3>배송 및 전달</h3>
+            
+            배송일에 배송 팀이 커피 원두를 고객의 주소로 배달합니다. 고객은 주문을 받고, 제품이 완전하고 품질이 좋은지 확인합니다.<br>
+            <h3>배송 확인 및 서비스 피드백</h3>
+            
+            고객은 받은 주문을 확인하고 만족도를 평가합니다. 만약 제품에 문제가 있다면 또는 추가적인 지원이 필요한 경우 커피 판매 사이트와 연락하여 문제를 해결합니다.<br>
+            <h3>서비스 종료 및 후속 조치</h3>
+            
+            배송이 성공적으로 완료되면 주문은 종료됩니다. 그러나 고객 서비스 품질을 향상시키기 위해 피드백과 후속 조치가 수행될 수 있습니다.<br>
+            이러한 과정을 통해 커피 판매 사이트는 고객에게 신선하고 고품질의 커피 원두를 제공하며, 배송 프로세스를 효율적으로 관리하여 만족스러운 고객 경험을 제공합니다.<br>
+            
+        </p>
+    </div> <!-- 콘텐츠 박스를 마무리 -->
+</body>
+</html> <!-- HTML 문서의 끝 -->
